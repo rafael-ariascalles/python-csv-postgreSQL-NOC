@@ -14,28 +14,66 @@ Process of downloading a csv file and ingest to a postgreSQL instance with Docke
 ***pandas_to_postgreSQL.ipynb*** the python notebook has all the necesary steps to ingest the NOC information to a DB. the database has to be previously deploy with a Docker Container. 
 
 
-for the tables we will have
+the tables has been created in this way. for the insertion we will use pyodbc and insert from the two files
 
-NOC_GROUP
-|GROUP_CODE|GROUP_TITLE|GROUP_DESCRIPTION|
-|---|---|---|
+```sql
 
-NOC_MAJOR
-|GROUP_CODE|MAJOR_CODE|MAJOR_TITLE|MAJOR_DESCRIPTION|
-|---|---|---|---|
+create table NOC_GROUP(
+    GROUP_CODE varchar, 
+    GROUP_TITLE varchar, 
+    GROUP_DEFINITION varchar, 
+);
 
-NOC_MINOR
-|MAJOR_CODE|MINOR_CODE|MINOR_TITLE|MINOR_DESCRIPTION|
-|---|---|---|---|
+create table NOC_MAJOR(
+    GROUP_CODE varchar, 
+    MAJOR_CODE varchar, 
+    MAJOR_TITLE varchar, 
+    MAJOR_DEFINITION varchar, 
+);
 
-NOC_UNIT
-|MINOR_CODE|UNIT_CODE|UNIT_TITLE|UNIT_DESCRIPTION|
-|---|---|---|---|
+create table NOC_MINOR(
+    MAJOR_CODE varchar, 
+    MINOR_CODE varchar, 
+    MINOR_TITLE varchar, 
+    MINOR_DEFINITION varchar, 
+);
 
-NOC_UNIT_EXAMPLE
-|UNIT_CODE|UNIT_EXAMPLE|
-|---|---|
+create table NOC_UNIT(
+    MINOR_CODE varchar, 
+    UNIT_CODE varchar, 
+    UNIT_TITLE varchar, 
+    UNIT_DEFINITION varchar, 
+);
 
-NOC_UNIT_EXAMPLE
-|UNIT_CODE|UNIT_EXAMPLE|
-|---|---|
+create table NOC_UNIT_EXAMPLE(
+    UNIT_CODE varchar, 
+    UNIT_EXAMPLE varchar, 
+);
+
+
+create table NOC_UNIT_INCLUSION(
+    UNIT_CODE varchar, 
+    UNIT_INCLUSION varchar, 
+);
+
+create table NOC_UNIT_EXCLUSION(
+    UNIT_CODE varchar, 
+    UNIT_EXCLUSION varchar, 
+);
+
+create table NOC_UNIT_MAIN_DUTIES(
+    UNIT_CODE varchar, 
+    UNIT_MAIN_DUTIES varchar, 
+);
+
+create table NOC_UNIT_EMPLOYMENT_REQUIREMENTS(
+    UNIT_CODE varchar, 
+    UNIT_EMPLOYMENT_REQUIREMENTS varchar, 
+);
+
+create table NOC_UNIT_ADITIONAL_INFORMATION(
+    UNIT_CODE varchar, 
+    UNIT_ADITIONAL_INFORMATION varchar, 
+);
+
+```
