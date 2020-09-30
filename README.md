@@ -31,12 +31,6 @@ the tables has been created for a separation of topic a level of information.
 
 the list of table and primary keys are:
 
--NOC_GROUP (pk group_code)
--NOC_GROUP (pk group_code)
--NOC_GROUP (pk group_code)
--NOC_GROUP (pk group_code)
--NOC_GROUP (pk group_code)
-
 |table_name | primary key |
 |---|---|
 |noc_group|group_code|
