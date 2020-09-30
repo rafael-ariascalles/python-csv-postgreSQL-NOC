@@ -3,59 +3,62 @@ create database noc_search_engine;
 \c noc_search_engine;
 
 create table NOC_GROUP(
-    GROUP_CODE varchar, 
+    GROUP_CODE varchar PRIMARY KEY, 
     GROUP_TITLE varchar, 
-    GROUP_DEFINITION varchar, 
+    GROUP_DEFINITION varchar
 );
 
 create table NOC_MAJOR(
-    GROUP_CODE varchar, 
-    MAJOR_CODE varchar, 
+    MAJOR_CODE varchar PRIMARY KEY, 
     MAJOR_TITLE varchar, 
-    MAJOR_DEFINITION varchar, 
+    MAJOR_DEFINITION varchar
 );
 
 create table NOC_MINOR(
-    MAJOR_CODE varchar, 
-    MINOR_CODE varchar, 
+    MINOR_CODE varchar PRIMARY KEY, 
     MINOR_TITLE varchar, 
-    MINOR_DEFINITION varchar, 
+    MINOR_DEFINITION varchar
 );
 
 create table NOC_UNIT(
-    MINOR_CODE varchar, 
-    UNIT_CODE varchar, 
+    UNIT_CODE varchar PRIMARY KEY, 
     UNIT_TITLE varchar, 
-    UNIT_DEFINITION varchar, 
+    UNIT_DEFINITION varchar
 );
 
 create table NOC_UNIT_EXAMPLE(
+    UNIT_EXAMPLE_ID SERIAL,
     UNIT_CODE varchar, 
-    UNIT_EXAMPLE varchar, 
+    TEXT_DESCRIPTION varchar
 );
 
 
 create table NOC_UNIT_INCLUSION(
+    UNIT_INCLUSION_ID SERIAL,
     UNIT_CODE varchar, 
-    UNIT_INCLUSION varchar, 
+    TEXT_DESCRIPTION varchar
 );
 
 create table NOC_UNIT_EXCLUSION(
+    UNIT_EXCLUSION_ID SERIAL,
     UNIT_CODE varchar, 
-    UNIT_EXCLUSION varchar, 
+    TEXT_DESCRIPTION varchar
 );
 
 create table NOC_UNIT_MAIN_DUTIES(
+    UNIT_MAIN_DUTIES_ID SERIAL,
     UNIT_CODE varchar, 
-    UNIT_MAIN_DUTIES varchar, 
+    TEXT_DESCRIPTION varchar
 );
 
 create table NOC_UNIT_EMPLOYMENT_REQUIREMENTS(
+    UNIT_EMPLOYMENT_REQUIREMENTS SERIAL,
     UNIT_CODE varchar, 
-    UNIT_EMPLOYMENT_REQUIREMENTS varchar, 
+    TEXT_DESCRIPTION varchar
 );
 
 create table NOC_UNIT_ADITIONAL_INFORMATION(
+    UNIT_ADITIONAL_INFORMATION SERIAL,
     UNIT_CODE varchar, 
-    UNIT_ADITIONAL_INFORMATION varchar, 
+    TEXT_DESCRIPTION varchar
 );
