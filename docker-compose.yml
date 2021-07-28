@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+
+  pg:
+    image: postgres
+    restart: always
+    ports:
+      - 9000:5432
+    
+    environment:
+      POSTGRES_PASSWORD: pass
+    
+    volumes:
+      - "./database/inital.sql:/docker-entrypoint-initdb.d/initial.sql"        
+  
+  api:
+    build: ./api
+    ports: 
+      - 9001:80
+
+  lab:
+    build: ./lab
+    ports:
+      - 8888:8888
+
+  

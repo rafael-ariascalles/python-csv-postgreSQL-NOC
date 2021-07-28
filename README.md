@@ -2,25 +2,25 @@
 
 Process of downloading a csv file and ingest to a postgreSQL instance with Docker Containers.
 
-1) Installation of database using docker-compose. Need to have docker as sudo user and docker-compose installed
+1) Setup of the PostgreSQL Database, API with FastAPI and IDE with Jupyterlab/tensorflow using docker-compose. 
+Need to have docker as sudo user and docker-compose installed
 
 ```bash
-    cd database
     docker-compose up 
 ```
 
-2) Run necesary command for basic connection
+2) In jupyter lab localhost:8888/lab Run necesary command for basic connection
 
 ```bash
-    pip install sqlalchemy
-    pip install psycopg2-binary
+    !pip install pandas
+    !pip install sqlalchemy
+    !pip install psycopg2-binary
 ```
 3) Insert all the values needed for the Schema ingestion in PostgreSQL
 
 ```bash
     python noc_etl_process.py
 ```
-
 
 ### Documents:
 
