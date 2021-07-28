@@ -1,11 +1,11 @@
 FROM tensorflow/tensorflow:2.2.3
 
-ARG spark_version=3.0.0
 ARG jupyterlab_version=3.0.15
 
 RUN mkdir workspace
 RUN pip3 install wget jupyterlab==${jupyterlab_version}
- 
+RUN pip3 install -q tensorflow-recommenders
+
 COPY ./files /workspace
 
 EXPOSE 8888
