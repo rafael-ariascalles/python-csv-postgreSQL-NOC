@@ -5,8 +5,7 @@ ARG jupyterlab_version=3.0.15
 RUN mkdir workspace
 RUN pip3 install wget jupyterlab==${jupyterlab_version}
 RUN pip3 install -q tensorflow-recommenders
-
-COPY ./files /workspace
+RUN pip3 install pandas sqlalchemy psycopg2-binary
 
 EXPOSE 8888
 WORKDIR /workspace
